@@ -1,11 +1,11 @@
-import {getPublishBooks} from "../DummyData";
+import { getPublishBooks } from "../DummyData";
 import BookList from "../components/books/book-list";
 
 export default function Home() {
-   const PublishBooks = getPublishBooks();
+  const PublishBooks = getPublishBooks();
   return (
     <div>
-    <BookList ls={PublishBooks}/>
+      <BookList ls={PublishBooks} />
     </div>
-  )
+  );
 }

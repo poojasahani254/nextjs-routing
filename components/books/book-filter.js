@@ -6,7 +6,7 @@ export default function BookFilter(props) {
     function submitHandler(e){
         e.preventDefault();
 
-        props.onSearch(yearInputRef.current.value, monthInputRef.current.value)
+        props.onSearch(yearInputRef.current.value, monthInputRef.current.value);
     }
     return (
         <form className={classes.form} onSubmit={submitHandler}>

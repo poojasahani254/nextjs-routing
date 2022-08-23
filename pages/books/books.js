@@ -1,8 +1,3 @@
-
 export default function Books() {
-    return (
-        <div>
-            Book home Page
-        </div>
-    )
+  return <div>Book home Page</div>;
 }

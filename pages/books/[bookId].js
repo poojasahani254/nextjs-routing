@@ -1,14 +1,11 @@
-import { useRouter } from "next/router";
-import { getBookById } from "../../DummyData";
 import BookSummary from "../../components/book-detail/book-summary";
 import BookDetailHome from "../../components/book-detail/book-detail-home";
 import { Fragment } from "react";
 import BookDetails from "../../components/book-detail/book-detail";
+import { getAllBooks, getBookById } from "../../components/helpers/app-utils";
 
-export default function BookDetailsPage() {
-  const router = useRouter();
-  const bookId = router.query.bookId;
-  const bookDetail = getBookById(bookId);
+export default function BookDetailsPage(props) {
+  const { bookDetail } = props;
 
   if (!bookDetail) return <div>Not Found Book!</div>;
   return (
@@ -20,4 +17,24 @@ export default function BookDetailsPage() {
       </BookDetails>
     </Fragment>
   );
+}
+
+export async function getStaticProps(context) {
+  const { params } = context;
+  const bookDetail = await getBookById(params.bookId);
+  return {
+    props: {
+      bookDetail: bookDetail,
+    },
+    revalidate: 30
+  };
+}
+
+export async function getStaticPaths() {
+  const books = await getAllBooks();
+  const paths = books.map((v) => ({ params: { bookId: v.id } }));
+  return {
+    paths: paths,
+    fallback: "blocking",
+  };
 }

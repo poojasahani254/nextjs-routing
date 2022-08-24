@@ -1,9 +1,9 @@
-import Link from "next/link";
 import classes from "./book-item.module.css";
 import Button from "../../ui/button/button";
 import ArrowRightIcon from "../icons/ArrowRightIcon";
 import DateIcon from "../icons/DateIcon";
 import LocationIcon from "../icons/Location";
+import Image from "next/image";
 
 function BookItem({ item }) {
   const { title, location, date, image, id } = item;
@@ -15,7 +15,7 @@ function BookItem({ item }) {
   const formattedLocation = location.replace(", ", "\n");
   return (
     <li className={classes.item}>
-      <img src={"/" + image} alt="" />
+      <Image src={"/" + image} alt="" width={340} height={160} />
       <div className={classes.content}>
         <div>
           <h2>{title}</h2>

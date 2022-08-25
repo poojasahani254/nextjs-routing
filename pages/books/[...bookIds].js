@@ -1,4 +1,4 @@
-import BookList from "../../components/books/book-list";
+import BookList from "../../components/module/books/list/book-list";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { useEffect, useState } from "react";

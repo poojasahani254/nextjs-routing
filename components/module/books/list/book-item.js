@@ -1,8 +1,8 @@
 import classes from "./book-item.module.css";
-import Button from "../../ui/button/button";
-import ArrowRightIcon from "../icons/ArrowRightIcon";
-import DateIcon from "../icons/DateIcon";
-import LocationIcon from "../icons/Location";
+import Button from "../../../../ui/button/button";
+import ArrowRightIcon from "../../../icons/ArrowRightIcon";
+import DateIcon from "../../../icons/DateIcon";
+import LocationIcon from "../../../icons/Location";
 import Image from "next/image";
 
 function BookItem({ item }) {
@@ -13,6 +13,7 @@ function BookItem({ item }) {
     day: "numeric",
   });
   const formattedLocation = location.replace(", ", "\n");
+
   return (
     <li className={classes.item}>
       <Image src={"/" + image} alt="" width={340} height={160} />

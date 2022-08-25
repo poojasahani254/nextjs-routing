@@ -1,5 +1,5 @@
-import AddressIcon from "../icons/Location";
-import DateIcon from "../icons/DateIcon";
+import AddressIcon from "../../../icons/Location";
+import DateIcon from "../../../icons/DateIcon";
 import DetailsItem from "./details-Item";
 import classes from "./book-details-home.module.css";
 import Image from "next/image";

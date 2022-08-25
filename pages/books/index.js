@@ -1,6 +1,6 @@
-import BookList from "../../components/books/book-list";
+import BookList from "../../components/module/books/list/book-list";
 import { Fragment } from "react";
-import BookFilter from "../../components/books/book-filter";
+import BookFilter from "../../components/module/books/list/book-filter";
 import { useRouter } from "next/router";
 import { getAllBooks } from "../../components/helpers/app-utils";
 

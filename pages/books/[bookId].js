@@ -1,8 +1,9 @@
-import BookSummary from "../../components/book-detail/book-summary";
-import BookDetailHome from "../../components/book-detail/book-detail-home";
+import BookSummary from "../../components/module/books/detail-display/book-summary";
+import BookDetailHome from "../../components/module/books/detail-display/book-detail-home";
 import { Fragment } from "react";
-import BookDetails from "../../components/book-detail/book-detail";
+import BookDetails from "../../components/module/books/detail-display/book-detail";
 import { getAllBooks, getBookById } from "../../components/helpers/app-utils";
+import Comment from "../../components/module/books/comment/comment";
 
 export default function BookDetailsPage(props) {
   const { bookDetail } = props;
@@ -15,6 +16,7 @@ export default function BookDetailsPage(props) {
       <BookDetails>
         <p>{bookDetail?.description}</p>
       </BookDetails>
+      <Comment bookId={bookDetail.id} />
     </Fragment>
   );
 }
@@ -26,7 +28,7 @@ export async function getStaticProps(context) {
     props: {
       bookDetail: bookDetail,
     },
-    revalidate: 30
+    revalidate: 30,
   };
 }
 

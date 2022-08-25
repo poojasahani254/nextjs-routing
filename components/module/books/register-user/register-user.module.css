@@ -1,0 +1,39 @@
+.registerUser {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 20rem;
+}
+
+.registerUser h2 {
+  text-align: center;
+}
+
+.control input {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #ccc;
+}
+
+.registerUser button {
+  background-color: #344845;
+  border: 1px solid #344845;
+  color: #dafff7;
+  border-radius: 0 6px 6px 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.registerUser button:hover,
+.registerUser button:active {
+  background-color: #02afa1;
+  border-color: #02afa1;
+}
+
+.control {
+  display: flex;
+}
+
+.control input {
+  flex: 1;
+}

@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 export async function connectDb() {
   return await MongoClient.connect(
-    `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.e9mvhhd.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+      `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.vil2slf.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
   );
 }
 

@@ -20,5 +20,5 @@ export async function getAllDocuments(client, collection, sort, filter = {}) {
 }
 
 export async function findOne(client, collection, filter) {
-  return await client.db().connect(collection).findOne(filter);
+  return await client.db().collection(collection).findOne(filter);
 }

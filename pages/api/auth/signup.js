@@ -19,7 +19,7 @@ async function SignupHandler(req, res) {
     }
 
     const client = await connectDb();
-    const alreadyExists = findOne(client, "users", { email: email });
+    const alreadyExists = await findOne(client, "users", { email: email });
     if (alreadyExists) {
       await client.close();
       return res.status(422).json({ message: "User Already Exists!!" });
